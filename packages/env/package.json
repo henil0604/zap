@@ -1,0 +1,9 @@
+{
+  "name": "@zap/env",
+  "version": "0.0.0",
+  "description": "Loads environment variables and fetch them by a function",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
