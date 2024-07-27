@@ -1,12 +1,15 @@
 {
   "name": "@zap/backend",
+  "version": "0.0.0",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.0",
-    "hono": "^4.5.1"
+    "hono": "^4.5.1",
+    "@zap/env": "workspace:*",
+    "@zap/logger": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
