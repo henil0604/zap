@@ -9,7 +9,6 @@ class EnvError extends Error {
   constructor(key: string) {
     super(`Could not find "${key}" environment variable`);
     this.name = "EnvError";
-    this.cause = `process.env[${key}] failed`;
   }
 }
 

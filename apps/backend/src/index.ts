@@ -1,7 +1,7 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import { env } from "@zap/env";
-import { logger } from "@zap/logger";
+import { env, logger } from "@zap/utils";
+import { CONST } from "@zap/const";
 
 const app = new Hono();
 
@@ -9,7 +9,7 @@ app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
-const port = parseInt(env.get("BACKEND_PORT"));
+const port = parseInt(env.get(CONST.ENV.BACKEND_PORT));
 
 const server = serve({
   fetch: app.fetch,

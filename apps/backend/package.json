@@ -8,8 +8,8 @@
   "dependencies": {
     "@hono/node-server": "^1.12.0",
     "hono": "^4.5.1",
-    "@zap/env": "workspace:*",
-    "@zap/logger": "workspace:*"
+    "@zap/utils": "workspace:*",
+    "@zap/const": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",

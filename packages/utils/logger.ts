@@ -1,6 +1,6 @@
 import chalk from "chalk";
-import { env } from "@zap/env";
 import { CONST } from "@zap/const";
+import { env } from "./env";
 
 /**
  * Log prefix symbols.
