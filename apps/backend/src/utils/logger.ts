@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { CONST } from "@zap/const";
+import { CONST } from "@/const";
 import { env } from "./env";
 
 /**
