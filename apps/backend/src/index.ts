@@ -2,7 +2,7 @@ import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";
-import { CONST } from "@zap/const";
+import { CONST } from "@/const";
 
 const app = new Hono();
 
