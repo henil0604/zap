@@ -1,0 +1,11 @@
+{
+  "name": "@zap/logger",
+  "version": "0.0.0",
+  "description": "Logger utility",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "@zap/env": "workspace:*",
+    "@zap/const": "workspace:*"
+  }
+}
