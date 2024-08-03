@@ -1,6 +1,6 @@
 import { lucia } from "@/modules/lucia";
 import { hash } from "@/utils/crypto";
-import { db } from "@/utils/db";
+import { db } from "@/modules/db";
 import { env } from "@/utils/env";
 import { ProviderId, User } from "@prisma/client";
 import { Context } from "hono";

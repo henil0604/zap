@@ -1,4 +1,4 @@
-import { db } from "@/utils/db";
+import { db } from "@/modules/db";
 import { env } from "@/utils/env";
 import { PrismaAdapter } from "@lucia-auth/adapter-prisma";
 import { ProviderId } from "@prisma/client";
