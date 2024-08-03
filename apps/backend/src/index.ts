@@ -3,12 +3,11 @@ import { Hono } from "hono";
 import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";
 import { CONST } from "@/const";
+import { AuthRoute } from "@/routes/auth";
 
 const app = new Hono();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
+app.route("/auth", AuthRoute);
 
 const port = parseInt(env.get(CONST.ENV.BACKEND_PORT));
 
