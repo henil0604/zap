@@ -7,12 +7,18 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.12.0",
+    "@hono/zod-validator": "^0.2.2",
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@prisma/client": "5.17.0",
     "chalk": "^5.3.0",
     "dotenv": "^16.4.5",
-    "hono": "^4.5.1"
+    "hono": "^4.5.1",
+    "lucia": "^3.2.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "prisma": "5.17.0",
     "tsx": "^4.7.1"
   }
 }
