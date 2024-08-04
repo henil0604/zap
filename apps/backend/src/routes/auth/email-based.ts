@@ -76,6 +76,11 @@ EmailBasedAuthRoute.post(
   zValidator("json", LoginInputSchema),
   async (c) => {
     const data = c.req.valid("json");
+    const session = c.var.session;
+
+    if (session?.id) {
+      await AuthService.invalidateSession(session.id);
+    }
 
     const user = await AuthService.getUserByEmail(data.email);
     if (!user) {
