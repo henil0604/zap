@@ -4,7 +4,7 @@ import { AuthService } from "@/services/auth";
 import { createResponse } from "@/utils/createResponse";
 import { CONST } from "@/const";
 
-export const AuthRoute = new Hono();
+export const AuthRoute = createHono();
 
 AuthRoute.route("/email", EmailBasedAuthRoute);
 
