@@ -30,7 +30,8 @@ EmailBasedAuthRoute.post(
           true,
           CONST.RESPONSE_CODES.EXISTS,
           "Email is already Registered"
-        )
+        ),
+        400
       );
     }
 
@@ -44,7 +45,8 @@ EmailBasedAuthRoute.post(
       return c.json(
         createResponse(false, CONST.RESPONSE_CODES.OK, "Account created", {
           userId: user.id,
-        })
+        }),
+        201
       );
     }
 
@@ -66,7 +68,8 @@ EmailBasedAuthRoute.post(
     return c.json(
       createResponse(false, CONST.RESPONSE_CODES.OK, "User created", {
         userId,
-      })
+      }),
+      201
     );
   }
 );
@@ -85,7 +88,8 @@ EmailBasedAuthRoute.post(
     const user = await AuthService.getUserByEmail(data.email);
     if (!user) {
       return c.json(
-        createResponse(true, CONST.RESPONSE_CODES.NOT_FOUND, "Email not found")
+        createResponse(true, CONST.RESPONSE_CODES.NOT_FOUND, "Email not found"),
+        404
       );
     }
 
@@ -99,7 +103,8 @@ EmailBasedAuthRoute.post(
           true,
           CONST.RESPONSE_CODES.NOT_FOUND,
           "Email authentication not found"
-        )
+        ),
+        404
       );
     }
 
@@ -110,7 +115,8 @@ EmailBasedAuthRoute.post(
 
     if (!isValidPassword) {
       return c.json(
-        createResponse(true, CONST.RESPONSE_CODES.INVALID, "Invalid Password")
+        createResponse(true, CONST.RESPONSE_CODES.INVALID, "Invalid Password"),
+        400
       );
     }
 
@@ -121,7 +127,8 @@ EmailBasedAuthRoute.post(
     });
 
     return c.json(
-      createResponse(false, CONST.RESPONSE_CODES.OK, "Login Successful")
+      createResponse(false, CONST.RESPONSE_CODES.OK, "Login Successful"),
+      200
     );
   }
 );
