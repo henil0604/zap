@@ -4,8 +4,14 @@ import { env } from "@/utils/env";
 import { logger } from "@/utils/logger";
 import { CONST } from "@/const";
 import { AuthRoute } from "@/routes/auth";
+import { csrf } from "hono/csrf";
+import { createHono } from "@/utils/createHono";
+import { LuciaMiddleware } from "@/middlewares/auth";
 
-const app = new Hono();
+const app = createHono();
+
+app.use(csrf());
+app.use("*", LuciaMiddleware());
 
 app.route("/auth", AuthRoute);
 
