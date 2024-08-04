@@ -1,4 +1,5 @@
 import { CONST } from "@/const";
+import { Session, User } from "lucia";
 
 export interface ZapResponse<Data> {
   error: boolean;
@@ -6,3 +7,8 @@ export interface ZapResponse<Data> {
   message?: string;
   data: Data;
 }
+
+export type HonoVariables = {
+  user: User | null;
+  session: Session | null;
+};
