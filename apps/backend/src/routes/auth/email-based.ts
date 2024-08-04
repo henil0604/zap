@@ -1,4 +1,3 @@
-import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 import { LoginInputSchema, SignupInputSchema } from "./types";
 import { AuthService } from "@/services/auth";
@@ -7,8 +6,9 @@ import { CONST } from "@/const";
 import { hash } from "@/utils/crypto";
 import { generateId } from "lucia";
 import { ProviderId } from "@prisma/client";
+import { createHono } from "@/utils/createHono";
 
-export const EmailBasedAuthRoute = new Hono();
+export const EmailBasedAuthRoute = createHono();
 
 EmailBasedAuthRoute.post(
   "/signup",
