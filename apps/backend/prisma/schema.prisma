@@ -24,7 +24,7 @@ model User {
 
 model Account {
     providerUserId String     @unique
-    providerId     ProviderId @unique
+    providerId     ProviderId
 
     user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId String
@@ -37,8 +37,8 @@ model Session {
     id        String   @id
     expiresAt DateTime
 
-    account    Account    @relation(fields: [providerId], references: [providerId])
-    providerId ProviderId
+    account        Account @relation(fields: [providerUserId], references: [providerUserId])
+    providerUserId String
 
     user   User   @relation(references: [id], fields: [userId], onDelete: Cascade)
     userId String

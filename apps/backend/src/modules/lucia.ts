@@ -14,7 +14,7 @@ export const lucia = new Lucia(adapter, {
   },
   getSessionAttributes(attributes) {
     return {
-      providerId: attributes.providerId,
+      providerUserId: attributes.providerUserId,
     };
   },
   getUserAttributes: (attributes) => {
@@ -37,5 +37,5 @@ interface DatabaseUserAttributes {
 }
 
 interface DatabaseSessionAttributes {
-  providerId: ProviderId;
+  providerUserId: string;
 }

@@ -122,7 +122,7 @@ EmailBasedAuthRoute.post(
 
     await AuthService.createAndSetSessionCookie({
       context: c,
-      providerId: ProviderId.Email,
+      providerUserId: account.providerUserId,
       userId: user.id,
     });
 

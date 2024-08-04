@@ -101,14 +101,14 @@ function setSessionCookie(data: SetSessionCookieData) {
 
 type CreateAndSetSessionCookieData = {
   userId: string;
-  providerId: ProviderId;
+  providerUserId: string;
   context: Context;
 };
 async function createAndSetSessionCookie(data: CreateAndSetSessionCookieData) {
   const { cookie: sessionCookie } = await AuthService.createSessionCookie(
     data.userId,
     {
-      providerId: data.providerId,
+      providerUserId: data.providerUserId,
     }
   );
 
