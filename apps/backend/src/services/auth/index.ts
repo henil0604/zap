@@ -4,7 +4,7 @@ import { db } from "@/modules/db";
 import { env } from "@/utils/env";
 import { ProviderId, User } from "@prisma/client";
 import { Context } from "hono";
-import { setCookie } from "hono/cookie";
+import { getCookie, setCookie } from "hono/cookie";
 import { CookieOptions } from "hono/utils/cookie";
 import { Cookie, RegisteredDatabaseSessionAttributes } from "lucia";
 
@@ -115,6 +115,7 @@ async function createAndSetSessionCookie(data: CreateAndSetSessionCookieData) {
   AuthService.setSessionCookie({
     context: data.context,
     cookie: sessionCookie,
+    attributes: AuthService.generateCookieSetOptions(),
   });
 
   return {
@@ -150,6 +151,14 @@ function generateCookieSetOptions(path = "/"): CookieSetOptions {
   };
 }
 
+async function invalidateSession(sessionId: string) {
+  await lucia.invalidateSession(sessionId);
+}
+
+function getSessionId(context: Context) {
+  return getCookie(context, lucia.sessionCookieName);
+}
+
 export const AuthService = {
   createUser,
   getUserByEmail,
@@ -161,4 +170,6 @@ export const AuthService = {
   setSessionCookie,
   clearSessionCookie,
   generateCookieSetOptions,
+  invalidateSession,
+  getSessionId,
 };
