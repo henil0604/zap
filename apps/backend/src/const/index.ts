@@ -7,6 +7,7 @@ const RESPONSE_CODES = {
   NOT_FOUND: "NOT_FOUND",
   INVALID: "INVALID",
   OK: "OK",
+  UNAUTHORIZED: "UNAUTHORIZED",
 } as const;
 
 export const CONST = {
