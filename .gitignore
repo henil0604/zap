@@ -1,0 +1,15 @@
+node_modules
+pnpm-lock.yaml
+
+.nx
+
+.env
+
+.vscode
+
+.env.*
+!.env.example
+
+
+.nx/cache
+.nx/workspace-data
